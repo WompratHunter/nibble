@@ -90,6 +90,7 @@ Completing an upload enqueues the video; an in-process worker pool picks up
 
 **Q12 – What generates the recipe?** No API keys or ffmpeg available unattended.
 ➡️ `RecipeGenerator` interface with two implementations:
+
 1. **Stub generator** (default): deterministic recipe derived from the
    video's title/description — makes the whole pipeline demoable and testable.
 2. **Claude generator** (opt-in when `ANTHROPIC_API_KEY` is set): sends the
@@ -99,10 +100,11 @@ Completing an upload enqueues the video; an in-process worker pool picks up
 
 **Q13 – What is the Cookbook?**
 ➡️ A user's **Cookbook** = recipes they **authored** (from their own videos)
-+ recipes they **saved** from other creators. Save/unsave is the one social
-action in scope. `likeCount`/`commentCount`/`isLiked` stay in the contract
-but are returned as zero/false (likes and comments are out of scope).
-Add `isSaved` to `FeedItem`.
+
+- recipes they **saved** from other creators. Save/unsave is the one social
+  action in scope. `likeCount`/`commentCount`/`isLiked` stay in the contract
+  but are returned as zero/false (likes and comments are out of scope).
+  Add `isSaved` to `FeedItem`.
 
 **Q14 – Mobile navigation.**
 ➡️ Tabs: **Feed**, **Create**, **Cookbook** (replaces the empty Profile tab;

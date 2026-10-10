@@ -23,7 +23,13 @@ export default function FeedScreen() {
   if (isLoading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator size="large" color={Colors.accent} />
+        <ActivityIndicator
+          size="large"
+          color={Colors.accent}
+          accessible={true}
+          accessibilityRole="progressbar"
+          accessibilityLabel="Loading feed"
+        />
       </View>
     );
   }

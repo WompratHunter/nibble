@@ -5,6 +5,27 @@
   "sourceRoot": "apps/mobile",
   "tags": ["platform:mobile", "scope:app"],
   "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/mobile"],
+      "options": {
+        "jestConfig": "apps/mobile/jest.config.js"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "eslint apps/mobile --ext .ts,.tsx",
+        "cwd": "{workspaceRoot}"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p tsconfig.json",
+        "cwd": "apps/mobile"
+      }
+    },
     "serve": {
       "command": "expo start --localhost",
       "continuous": true,
