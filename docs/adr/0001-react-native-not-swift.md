@@ -1,0 +1,3 @@
+# Keep the iOS app in React Native; apply Apple's guidelines rather than rewrite in Swift
+
+The owner asked for reviews that enforce "Apple best practices and Swift standards", but the app is an Expo / React Native codebase targeting iOS, Android and web. We keep React Native and enforce Apple's Human Interface Guidelines (hit targets, safe areas, Dynamic Type, VoiceOver, system sheets, share sheet, haptics) within it. Swift is written only if a native module becomes unavoidable, and then follows the Swift API Design Guidelines. A SwiftUI rewrite would discard working cross-platform code and drop Android and web.
